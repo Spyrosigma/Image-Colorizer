@@ -380,7 +380,7 @@ if input_image is not None:
 	st.image([img, img_bw], caption=['Original', 'Input', ], width=256)
 
     # Optionally, you can also display the saved images
-	st.markdown("##Colorized Images:")
+	st.markdown("## Colorized Images:")
 	st.image([eccv16_path, siggraph17_path], caption=['Output (ECCV 16)', 'Output (SIGGRAPH 17)'], width=256)
 
 	# plt.figure(figsize=(12,8))
