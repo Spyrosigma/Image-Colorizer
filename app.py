@@ -11,7 +11,7 @@ class BaseColor(nn.Module):
 		super(BaseColor, self).__init__()
 
 		self.l_cent = 50.
-		self.l_norm = 100.
+		self.l_norm = 100.  
 		self.ab_norm = 110.
 
 	def normalize_l(self, in_l):
@@ -377,12 +377,11 @@ if input_image is not None:
 	plt.imsave(siggraph17_path, out_img_siggraph17)
 
     # Display images using Streamlit
-	st.image([img, img_bw, out_img_eccv16, out_img_siggraph17], caption=['Original', 'Input', 'Output (ECCV 16)', 'Output (SIGGRAPH 17)'],
-             width=256)
+	st.image([img, img_bw], caption=['Original', 'Input', ], width=256)
 
     # Optionally, you can also display the saved images
-	st.markdown("### Saved Images:")
-	st.image([eccv16_path, siggraph17_path], width=256)
+	st.markdown("##Colorized Images:")
+	st.image([eccv16_path, siggraph17_path], caption=['Output (ECCV 16)', 'Output (SIGGRAPH 17)'], width=256)
 
 	# plt.figure(figsize=(12,8))
 	# plt.subplot(2,2,1)
