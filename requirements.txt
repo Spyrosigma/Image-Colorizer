@@ -3,3 +3,4 @@ scikit-image
 numpy
 matplotlib
 pillow
+streamlit
