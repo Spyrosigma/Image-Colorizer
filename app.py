@@ -1,6 +1,12 @@
 import matplotlib.pyplot as plt
 import streamlit as st
 
+st.set_page_config(
+    page_title="Image Colorizer",
+    page_icon="🎨",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 st.title("Colorizer")
 st.write("This is a simple web app to colorize black and white images using deep learning models.")
 
@@ -313,12 +319,7 @@ from io import BytesIO
 import base64
 
 # Set page config for better appearance
-st.set_page_config(
-    page_title="Image Colorizer",
-    page_icon="🎨",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
+
 
 # Apply custom CSS
 st.markdown("""
