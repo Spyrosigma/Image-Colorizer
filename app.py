@@ -8,7 +8,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 st.title("Colorizer")
-st.write("This is a simple web app to colorize black and white images using deep learning models.")
+st.write("This is a simple web app to colorize black and white images using deep learning models (SIGGRAPH 17 and ECCV 16).")
 
 # -------------------- base color ------------------
 
@@ -449,7 +449,7 @@ with st.sidebar:
 # Main content
 st.markdown('<div class="info-box">', unsafe_allow_html=True)
 st.markdown("""
-This app transforms your black and white images into colorized versions using deep learning.
+This app transforms your black and white images into colorized versions using ECCV 16 and SIGGRAPH 17.
 Upload an image to see the magic happen!
 """)
 st.markdown('</div>', unsafe_allow_html=True)
@@ -532,10 +532,10 @@ if uploaded_file is not None and 'models_loaded' in st.session_state and st.sess
     col1, col2 = st.columns(2)
     with col1:
         st.markdown("<h3 style='text-align: center;'>Original</h3>", unsafe_allow_html=True)
-        st.image(img, use_column_width=True)
+        st.image(img, use_container_width=True)
     with col2:
         st.markdown("<h3 style='text-align: center;'>Grayscale</h3>", unsafe_allow_html=True)
-        st.image(img_bw, use_column_width=True)
+        st.image(img_bw, use_container_width=True)
     
     # Colorized results
     st.markdown('<h2 class="sub-header">Colorized Results</h2>', unsafe_allow_html=True)
@@ -544,15 +544,15 @@ if uploaded_file is not None and 'models_loaded' in st.session_state and st.sess
         col1, col2 = st.columns(2)
         with col1:
             st.markdown("<h3 style='text-align: center;'>ECCV 16</h3>", unsafe_allow_html=True)
-            st.image(colorized_images[0], use_column_width=True)
+            st.image(colorized_images[0], use_container_width=True)
             st.markdown(get_image_download_link(colorized_pil_images[0], f"colorized_eccv16_{uploaded_file.name}", "Download ECCV 16 Result"), unsafe_allow_html=True)
         with col2:
             st.markdown("<h3 style='text-align: center;'>SIGGRAPH 17</h3>", unsafe_allow_html=True)
-            st.image(colorized_images[1], use_column_width=True)
+            st.image(colorized_images[1], use_container_width=True)
             st.markdown(get_image_download_link(colorized_pil_images[1], f"colorized_siggraph17_{uploaded_file.name}", "Download SIGGRAPH 17 Result"), unsafe_allow_html=True)
     else:
         st.markdown(f"<h3 style='text-align: center;'>{captions[0]}</h3>", unsafe_allow_html=True)
-        st.image(colorized_images[0], use_column_width=True)
+        st.image(colorized_images[0], use_container_width=True)
         st.markdown(get_image_download_link(colorized_pil_images[0], f"colorized_{captions[0]}_{uploaded_file.name}", f"Download {captions[0]} Result"), unsafe_allow_html=True)
     
 
