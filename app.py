@@ -347,7 +347,7 @@ st.markdown("""
         text-align: center;
         padding: 10px;
         border-radius: 5px;
-        background-color: #4CAF50;
+        background-color: white;
         color: white;
         text-decoration: none;
         margin: 10px 0;
